@@ -8,7 +8,7 @@ const PORT = 3000;
 app.use(express.json());
 app.use(cors({ origin: '*' }));
 
-const API_KEY = "AIaSyDOk7gML8Bv8athGvOCEvXiUqhyfEer4CM"; // Move to environment variables
+const API_KEY = "AIzaSyDOk7gML8Bv8athGvOCEvXiUqhyfEer4CM"; // Move to environment variables
 const GEMINI_API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=${API_KEY}`;
 
 app.post("/fetch-recommendations", async (req, res) => {
