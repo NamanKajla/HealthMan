@@ -123,7 +123,7 @@ label {
 }
 
 input, select {
-    width: 100%;
+    width: 97%;
     padding: 0.75rem 1rem;
     border: 2px solid var(--border-color);
     border-radius: 0.5rem;
@@ -400,4 +400,12 @@ input:focus, select:focus {
     .exercise-grid {
         grid-template-columns: 1fr;
     }
+}
+.loading {
+    text-align: center;
+    font-size: 1.8rem;
+    /* color:#ec4899 */
+    font-weight: bold;
+    color: var(--primary-color);
+    margin-top: 1rem;
 }
