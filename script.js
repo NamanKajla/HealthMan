@@ -107,6 +107,9 @@ document.getElementById("fitnessForm").addEventListener("submit", async function
 });
 
 async function fetchExercisePlan(bmi, age, gender, fitnessGoal, fitnessLevel, name) {
+    const loadingDiv = document.getElementById("loading");
+    loadingDiv.style.display = "block"; // Show loading
+
     try {
         const response = await fetch("https://healthman-backend-production.up.railway.app/fetch-exercise-plan", {
             method: "POST",
@@ -123,8 +126,11 @@ async function fetchExercisePlan(bmi, age, gender, fitnessGoal, fitnessLevel, na
     } catch (error) {
         console.error("Error fetching exercise plan:", error);
         throw error;
+    } finally {
+        loadingDiv.style.display = "none"; // Hide loading
     }
 }
+
 
 function displayExercisePlan(data, bmi, name) {
     const resultsDiv = document.getElementById("results");
