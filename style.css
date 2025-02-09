@@ -1,0 +1,403 @@
+/* Base styles */
+:root {
+    --primary-color: #8b5cf6;
+    --primary-hover: #7c3aed;
+    --primary-active: #6d28d9;
+    --accent-color: #f472b6;
+    --accent-hover: #ec4899;
+    --text-primary: #1f2937;
+    --text-secondary: #4b5563;
+    --bg-primary: #f8fafc;
+    --bg-secondary: #ffffff;
+    --border-color: #e2e8f0;
+    --focus-ring: #ddd6fe;
+    --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    --transition-duration: 200ms;
+    --section-bg: #f8fafc;
+    --section-border: #e5e7eb;
+}
+
+/* Dark mode variables */
+[data-theme="dark"] {
+    --primary-color: #a78bfa;
+    --primary-hover: #8b5cf6;
+    --primary-active: #7c3aed;
+    --accent-color: #f472b6;
+    --accent-hover: #ec4899;
+    --text-primary: #f8fafc;
+    --text-secondary: #e2e8f0;
+    --bg-primary: #0f172a;
+    --bg-secondary: #1e293b;
+    --border-color: #334155;
+    --focus-ring: #4c1d95;
+    --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+    --section-bg: #1e293b;
+    --section-border: #334155;
+}
+
+/* Global styles */
+body {
+    font-family: system-ui, -apple-system, sans-serif;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.5;
+    transition: background-color var(--transition-duration), color var(--transition-duration);
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+/* Header styles */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding: 1rem;
+    background-color: var(--bg-secondary);
+    border-radius: 1rem;
+    box-shadow: var(--card-shadow);
+}
+
+.title {
+    font-size: 2rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin: 0;
+}
+
+/* Theme toggle button */
+.theme-toggle {
+    background-color: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all var(--transition-duration);
+}
+
+.theme-toggle:hover {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.theme-toggle svg {
+    width: 24px;
+    height: 24px;
+    color: var(--text-primary);
+    transition: color var(--transition-duration);
+}
+
+.theme-toggle:hover svg {
+    color: white;
+}
+
+/* Form styles */
+.form-container {
+    background-color: var(--bg-secondary);
+    border-radius: 1rem;
+    padding: 2rem;
+    box-shadow: var(--card-shadow);
+    border: 1px solid var(--border-color);
+    margin-bottom: 2rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+}
+
+input, select {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 2px solid var(--border-color);
+    border-radius: 0.5rem;
+    background-color: var(--bg-secondary);
+    color: var(--text-primary);
+    transition: all var(--transition-duration);
+}
+
+input:focus, select:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px var(--focus-ring);
+}
+
+/* Button styles */
+.button {
+    width: 100%;
+    padding: 1rem;
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all var(--transition-duration);
+}
+
+.button:hover {
+    transform: translateY(-1px);
+    filter: brightness(110%);
+}
+
+/* Results */
+.results {
+    padding: 2rem;
+    background-color: var(--bg-secondary);
+    border-radius: 1rem;
+    border: 1px solid var(--border-color);
+    box-shadow: var(--card-shadow);
+    color: var(--text-primary);
+}
+
+.results h2 {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--primary-color);
+}
+
+.results h3 {
+    color: var(--accent-color);
+    font-size: 1.25rem;
+    margin: 1.5rem 0 1rem;
+}
+
+.recommendation-section {
+    background-color: var(--section-bg);
+    border: 1px solid var(--section-border);
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.recommendation-section:last-child {
+    margin-bottom: 0;
+}
+
+.recommendation-section h4 {
+    color: var(--primary-color);
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+}
+
+.recommendation-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.recommendation-list li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+}
+
+.recommendation-list li::before {
+    content: "•";
+    color: var(--accent-color);
+    position: absolute;
+    left: 0.5rem;
+}
+
+.bmi-info {
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    color: white;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    margin-bottom: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.bmi-info strong {
+    font-size: 1.2rem;
+}
+
+.bmi-category {
+    padding: 0.25rem 0.75rem;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 1rem;
+    }
+
+    .header {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+
+    .bmi-info {
+        flex-direction: column;
+        gap: 0.5rem;
+        text-align: center;
+    }
+}
+
+.results-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.header-section {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background: var(--card-bg);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.bmi-info {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.plan-section {
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background: var(--card-bg);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.plan-section h3 {
+    color: var(--heading-color);
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--border-color);
+}
+
+.schedule-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+}
+
+.schedule-card {
+    background: var(--card-bg-secondary);
+    padding: 1.25rem;
+    border-radius: 6px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.schedule-card h4 {
+    color: var(--heading-color);
+    margin-bottom: 0.75rem;
+    font-weight: 600;
+}
+
+.exercise-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.exercise-card {
+    background: var(--card-bg-secondary);
+    padding: 1.5rem;
+    border-radius: 6px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.exercise-card h4 {
+    color: var(--heading-color);
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border-color);
+    font-weight: 600;
+}
+
+.exercise-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.exercise-card li {
+    margin-bottom: 0.75rem;
+    padding-left: 1.25rem;
+    position: relative;
+    line-height: 1.4;
+}
+
+.exercise-card li:before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: var(--primary-color);
+}
+
+.diet-grid {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.diet-section {
+    background: var(--card-bg-secondary);
+    padding: 1.5rem;
+    border-radius: 6px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.diet-section h4 {
+    color: var(--heading-color);
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border-color);
+    font-weight: 600;
+}
+
+.diet-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.diet-section li {
+    margin-bottom: 0.75rem;
+    padding-left: 1.25rem;
+    position: relative;
+    line-height: 1.4;
+}
+
+.diet-section li:before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: var(--primary-color);
+}
+
+@media (max-width: 768px) {
+    .schedule-grid,
+    .exercise-grid {
+        grid-template-columns: 1fr;
+    }
+}
