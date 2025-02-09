@@ -25,11 +25,11 @@ It also uses **local storage** to store user preferences and history for a seaml
 ## Installation & Setup
 1. Clone the repository:
    ```sh
-   git clone https://github.com/your-repo/fitness-ai-app.git
+   git clone https://github.com/NamanKajla/HealthMan.git
    ```
 2. Navigate to the project directory:
    ```sh
-   cd fitness-ai-app
+   cd HealthMan
    ```
 3. Open `index.html` in a browser.
 
